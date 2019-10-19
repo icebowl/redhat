@@ -7,3 +7,7 @@ update:
 dnf update 
 dnf group install gnome
 dnf group install gnome*
+
+
+notes:
+dnf list installed "kernel*"
