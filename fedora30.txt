@@ -11,3 +11,8 @@ dnf group install gnome*
 
 notes:
 dnf list installed "kernel*"
+
+#mariadb
+https://fedoraproject.org/wiki/MariaDB
+
+
