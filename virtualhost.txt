@@ -39,3 +39,13 @@ $ sudo vi /etc/httpd/conf/httpd.conf
 
 # Load config files in the "/etc/httpd/conf.d" directory if any
 IncludeOptional conf.d/*.conf
+replace with 
+IncludeOptional sites-enabled/*.conf
+
+<VirtualHost *:80>
+    ServerName website.com
+    ServerAlias www.website.com
+    DocumentRoot /var/www/website.com/html
+    ErrorLog /var/www/website.com/log/error.log
+    CustomLog /var/www/website.com/log/requests.log combined
+</VirtualHost>
