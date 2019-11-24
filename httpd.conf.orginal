@@ -101,11 +101,11 @@ ServerAdmin root@localhost
 # Deny access to the entirety of your server's filesystem. You must
 # explicitly permit access to web content directories in other 
 # <Directory> blocks below.
-# cwc
-#<Directory />
-#    AllowOverride none
-#    Require all denied
-#</Directory>
+#
+<Directory />
+    AllowOverride none
+    Require all denied
+</Directory>
 
 #
 # Note that from this point forward you must specifically allow
@@ -118,27 +118,20 @@ ServerAdmin root@localhost
 # DocumentRoot: The directory out of which you will serve your
 # documents. By default, all requests are taken from this directory, but
 # symbolic links and aliases may be used to point to other locations.
-# cwc
-DocumentRoot "/home/cwc/http"
+#
+DocumentRoot "/var/www/html"
 
 #
 # Relax access to content within /var/www.
-# cwc
-#<Directory "/home/cwc/http">
-    #AllowOverride None
+#
+<Directory "/var/www">
+    AllowOverride None
     # Allow open access:
-    #Require all granted
-#    Options +Indexes
-#</Directory>
+    Require all granted
+</Directory>
 
 # Further relax access to the default document root:
-<Directory "/home/cwc/http">
-Options All Indexes FollowSymLinks
-Order allow,deny
-Allow from all
-#    HeaderName .header.html
-#    ReadmeName .footer.html
-
+<Directory "/var/www/html">
     #
     # Possible values for the Options directive are "None", "All",
     # or any combination of:
@@ -151,19 +144,19 @@ Allow from all
     # http://httpd.apache.org/docs/2.4/mod/core.html#options
     # for more information.
     #
-#    Options Indexes FollowSymLinks
+    Options Indexes FollowSymLinks
 
     #
     # AllowOverride controls what directives may be placed in .htaccess files.
     # It can be "All", "None", or any combination of the keywords:
     #   Options FileInfo AuthConfig Limit
     #
-#    AllowOverride None
+    AllowOverride None
 
     #
     # Controls who can get stuff from this server.
     #
-#    Require all granted
+    Require all granted
 </Directory>
 
 #
@@ -189,11 +182,7 @@ Allow from all
 # logged here.  If you *do* define an error logfile for a <VirtualHost>
 # container, that host's errors will be logged there and not here.
 #
-#ErrorLog "logs/error_log"
-#cwc
-ErrorLog /home/cwc/http/logs/error.log
-LogFormat "%h %l %u %t \"%r\" %>s %b" common
-CustomLog /home/cwc/http/logs/access_log common
+ErrorLog "logs/error_log"
 
 #
 # LogLevel: Control the number of messages logged to the error_log.
