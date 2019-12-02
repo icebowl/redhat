@@ -22,3 +22,5 @@ nmcli con up enp0s3
 ip addr show enp0s3
 
 
+#selinux
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/using_selinux/index
