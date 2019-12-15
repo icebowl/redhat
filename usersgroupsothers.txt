@@ -1,3 +1,11 @@
+
+    chmod - modify file access rights
+    su - temporarily become the superuser
+    sudo - temporarily become the superuser
+    chown - change file ownership
+    chgrp - change a file's group ownership
+
+
 - 421 421 421
 
 - rwx rwx rwx
@@ -8,6 +16,15 @@
 |  OWNER
 |
 FILE TYPE OR DIRECTORY
+
+
+    r - Allows the contents of the directory to be listed if the x attribute is also set.
+    w - Allows files within the directory to be created, deleted, or renamed if the x attribute is also set.
+    x - Allows a directory to be entered (i.e. cd dir).
+
+
+
+
 
 
 http://linuxcommand.org/lc3_lts0090.php
