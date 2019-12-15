@@ -1,0 +1,15 @@
+- 421 421 421
+
+- rwx rwx rwx
+^  ^   ^   ^
+|  |   |   |
+|  |   |   OTHERS
+|  |   GROUP
+|  OWNER
+|
+FILE TYPE OR DIRECTORY
+
+
+http://linuxcommand.org/lc3_lts0090.php
+
+
