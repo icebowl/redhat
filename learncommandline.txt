@@ -1,0 +1,1 @@
+du -s * | sort -nr > $HOME/user_space_report.txt
