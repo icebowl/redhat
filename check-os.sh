@@ -1,0 +1,11 @@
+now=$(date);
+printf "%s\n" "$now"; 
+uptime -p;
+uname -r;
+cat /etc/os-release | grep CPE_NAME;
+#dnf history list all;
+pckgs=$(dnf list installed | wc -l);
+printf "TOTAL PACKAGES $pckgs \n";
+#echo  $pckgs;
+#echo "PACKAGES ";  
+#dnf list installed | wc -l;
