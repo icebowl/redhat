@@ -1,0 +1,5 @@
+#add the following to a directory to enable Directory listing
+Options +Indexes
+IndexOptions FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=*
+
+
