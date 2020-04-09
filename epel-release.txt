@@ -1,0 +1,2 @@
+dnf install -y epel-release
+dnf install chromium -y
