@@ -1,0 +1,2 @@
+https://linuxconfig.org/download-video-from-the-command-line-with-youtube-dl
+dnf install python2 python3 python-pip

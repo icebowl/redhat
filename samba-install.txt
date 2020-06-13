@@ -1,0 +1,25 @@
+https://linuxconfig.org/install-samba-on-redhat-8
+
+sudo smbpasswd -a sambauser
+
+Configure a share accessible only by registered users
+
+To protect access to a resource with a login prompt, when samba is running as a standalone server, we must add an existing user to the samba database. The credentials of this user will be necessary to access the shared directory. For security reasons, it's a good practice to create a dedicated user for the task, omitting the creation of his home directory, and assigning him a fake shell:
+
+sudo adduser -M sambauser -s /sbin/nologin
+
+The -M option passed to the command is the short form for --no-create-home, which is quite self-explanatory; the -s option, instead, let us specify a shell, in this case an invalid one on purpose: /sbin/nologin. At this point the user doesn't even need to have a password set on our system.
+
+Once the user is created, we need to add it to the samba database: we can perform the operation by using the smbpasswd command:
+
+$ sudo smbpasswd -a sambauser
+New SMB password:
+Retype new SMB password:
+Added user sambauser.
+
+After running the command, we are prompted to assign a password for the user, and also to confirm it: this password will only be valid in the samba context, doesn't have anything to do with the user account on our system. To restrict the share we previously created, we have to make a little change in the dedicated section:
+
+[linuxconfig]
+        path = /mnt/shared
+        guest ok = no
+
